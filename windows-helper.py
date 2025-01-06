@@ -10,7 +10,10 @@ from windows.chance import Chance
 from windows.color_picker import ColorPicker
 from windows.info import Info
 from windows.run_command import RunCmd
+from windows.timer import Timer
+
 import json
+
 
 RESET_WINDOWS = {
     "0": {
@@ -44,13 +47,21 @@ RESET_WINDOWS = {
             "y": 10,
             "width": 180
         }
+    },
+    "4": {
+        "type": "timer",
+        "geometry": {
+            "x": 580,
+            "y": 10,
+            "width": 180
+        }
     }
 }
 
 
 class App(QObject):
     toggle = Signal(bool)
-    all_windows = {"info": Info, "cmd": RunCmd, "color": ColorPicker, "chance": Chance}
+    all_windows = {"info": Info, "cmd": RunCmd, "color": ColorPicker, "chance": Chance, "timer": Timer}
     windows = []
 
     def __init__(self):
@@ -70,7 +81,6 @@ class App(QObject):
                 json.dump(settings, f, indent=2)
             with open('res/settings.json', 'r') as f:
                 settings = json.load(f)
-
 
         for i, d in settings.get('windows', {}).items():
             print(d)
