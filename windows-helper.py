@@ -83,7 +83,6 @@ class App(QObject):
                 settings = json.load(f)
 
         for i, d in settings.get('windows', {}).items():
-            print(d)
             if d['type'] == 'info':
                 self.windows.append(
                     Info((
