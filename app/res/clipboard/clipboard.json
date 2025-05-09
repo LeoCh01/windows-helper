@@ -1,5 +1,8 @@
 {
   "lock": false,
   "length": 2,
-  "clipboard": []
+  "clipboard": [
+    "insertWidget",
+    "setFixedHeight"
+  ]
 }

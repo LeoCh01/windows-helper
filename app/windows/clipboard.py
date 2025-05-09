@@ -84,6 +84,7 @@ class MainWindow(CustomWindow):
 
         self.clip_layout.insertWidget(0, self.create_copy_btn(self.clipboard[-1]))
         self.save_config()
+        self.geo = self.geometry()
 
     def on_clear(self):
         self.clipboard = []

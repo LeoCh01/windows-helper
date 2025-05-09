@@ -1,12 +1,9 @@
 CURRENT
-- snap windows every 10px
-- color wheel
-- screen draw tool
-- fix groq history
+- fix clipboard window size change
 
+- add dynamic json settings
 TODO
 - fix window loading
-- add dynamic settings from json
 - clean up chat code
 - stream api calls
 - make markdown better

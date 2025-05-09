@@ -30,6 +30,7 @@ class MainWindow(CustomWindow):
         self.drawing_widget.close_sc.activated.connect(self.on_start_clicked)
 
         self.layout.addLayout(self.button_layout)
+        
 
     def on_start_clicked(self):
         if self.start_button.text() == "Start":
