@@ -1,10 +1,12 @@
+import os.path
 import subprocess
 import json
 from PySide6.QtWidgets import QPushButton, QVBoxLayout, QLineEdit, QHBoxLayout, QGroupBox, QLabel, QDialogButtonBox, \
     QPlainTextEdit, QCheckBox, QDialog
 
-from res.paths import CMDS_PATH
-from windows.lib.custom_widgets import CustomWindow, CustomDialog
+from windows.custom_widgets import CustomWindow, CustomDialog
+
+CMDS_PATH = os.path.join(os.path.dirname(__file__), 'res/commands.json')
 
 
 class MainWindow(CustomWindow):

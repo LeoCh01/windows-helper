@@ -1,4 +1,5 @@
 import json
+import os.path
 
 from pynput import keyboard
 
@@ -6,8 +7,10 @@ from PySide6.QtGui import QIcon
 from PySide6.QtCore import Qt, Signal, QSize
 from PySide6.QtWidgets import QLabel, QGroupBox, QVBoxLayout, QPushButton, QHBoxLayout, QCheckBox, QSlider, QApplication
 
-from res.paths import CLIPBOARD_PATH, IMG_PATH
-from windows.lib.custom_widgets import CustomWindow
+from windows.custom_widgets import CustomWindow
+
+CLIPBOARD_PATH = os.path.join(os.path.dirname(__file__), 'res/clipboard.json')
+IMG_PATH = os.path.join(os.path.dirname(__file__), 'res/img')
 
 
 class MainWindow(CustomWindow):

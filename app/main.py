@@ -10,7 +10,7 @@ from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QWidgetActio
 import importlib
 import json
 
-from res.paths import SETTINGS_PATH, RES_PATH, STYLES_PATH, IMG_PATH
+from res.paths import SETTINGS_PATH, POS_PATH, RES_PATH, STYLES_PATH, IMG_PATH
 
 
 class App(QObject):
@@ -26,18 +26,22 @@ class App(QObject):
         self.toggle_key = settings.get('toggle_key', '`')
         keyboard.add_hotkey(self.toggle_key, self.toggle_windows, suppress=True)
         self.is_hidden = False
-        self.is_reset = settings.get('default_pos', True)
+        self.is_reset = settings.get('is_default_pos', True)
 
         self.load_windows(settings)
         self.setup_tray_icon()
 
     def load_windows(self, settings):
-        for i, d in enumerate(settings.get('windows', [])):
+        with open(POS_PATH, 'r') as f:
+            pos_settings = json.load(f)
+            pos_settings['windows'] = []
+
+        for i, w in enumerate(settings.get('windows')):
             try:
-                class_obj = App.load_script(d['script']).MainWindow
-                print(f"Loading {d['script'][:-3]}")
+                class_obj = App.load_plugin(w + '/window.py').MainWindow
+                print(f"Loading {w}")
             except Exception as e:
-                logging.error(f"Error loading {d['script'][:-3]} :: {e}", exc_info=True)
+                logging.error(f"Error loading {w} :: {e}", exc_info=True)
                 continue
 
             class_obj.set_toggle_key = self.set_toggle_key
@@ -45,10 +49,14 @@ class App(QObject):
             class_obj.toggle_windows_2 = self.toggle_windows_2
             class_obj.toggle_signal = self.toggle
 
-            if self.is_reset or not d.get('geometry'):
+            pos_settings['windows'].append(w + str(i))
+            if self.is_reset or not pos_settings['pos'].get(w + str(i)):
                 self.windows.append(class_obj(i))
             else:
-                self.windows.append(class_obj(i, d['geometry']))
+                self.windows.append(class_obj(i, pos_settings['pos'][w + str(i)]))
+
+        with open(POS_PATH, 'w') as f:
+            json.dump(pos_settings, f, indent=2)
 
         for window in self.windows:
             self.toggle.connect(window.toggle_windows)
@@ -90,18 +98,18 @@ class App(QObject):
         self.tray_icon.show()
 
     @staticmethod
-    def load_script(script_name):
-        script_path = os.path.join(os.getcwd() + '\\windows', script_name)
-        print(script_path)
+    def load_plugin(plugin_name):
+        plugin_path = os.path.join(os.getcwd() + '\\windows', plugin_name)
+        print(plugin_path)
 
-        if os.path.exists(script_path):
-            spec = importlib.util.spec_from_file_location(script_name, script_path)
+        if os.path.exists(plugin_path):
+            spec = importlib.util.spec_from_file_location(plugin_name, plugin_path)
             module = importlib.util.module_from_spec(spec)
-            sys.modules[script_name] = module
+            sys.modules[plugin_name] = module
             spec.loader.exec_module(module)
             return module
         else:
-            logging.error(f"Script {script_name} does not exist at {script_path}.")
+            logging.error(f"Script {plugin_name} does not exist at {plugin_path}.")
             return None
 
 

@@ -2,11 +2,10 @@ import json
 
 from PySide6.QtCore import QPropertyAnimation, QPoint, QEasingCurve, Qt, QRect
 from PySide6.QtGui import QPainterPath, QRegion, QColor, QPainter, QBrush
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QSizePolicy, QHBoxLayout, QLabel, QPushButton, QDialog, QCheckBox, \
-    QComboBox, QLineEdit, QGroupBox
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QSizePolicy, QHBoxLayout, QLabel, QPushButton, QDialog, QCheckBox, QLineEdit, QGroupBox
 import random
 
-from res.paths import SETTINGS_PATH
+from res.paths import SETTINGS_PATH, POS_PATH
 
 
 class CustomWindow(QWidget):
@@ -197,13 +196,12 @@ class CustomTitleBar(QWidget):
         self.update()
 
         if self.parent.wid != -1:
-            with open(SETTINGS_PATH, 'r') as f:
+            with open(POS_PATH, 'r') as f:
                 settings = json.load(f)
-                w = settings.get('windows', [])[self.parent.wid]
-                w['geometry'] = [self.parent.geo.x(), self.parent.geo.y(), self.parent.geo.width(), self.parent.geo.height()]
-                settings['windows'][self.parent.wid] = w
+                w = settings.get('windows')[self.parent.wid]
+                settings['pos'][w] = [self.parent.geo.x(), self.parent.geo.y(), self.parent.geo.width(), self.parent.geo.height()]
 
-            with open(SETTINGS_PATH, 'w') as f:
+            with open(POS_PATH, 'w') as f:
                 json.dump(settings, f, indent=2)
 
 

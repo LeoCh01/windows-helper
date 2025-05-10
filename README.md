@@ -92,14 +92,14 @@ Some application configurations can be modified in the `res/settings.json` file.
   "startup": true,
   "toggle_key": "`",
   "toggle_direction": "random",
-  "default_pos": true
+  "is_default_pos": true
 }
 ```
 
 - **startup:** Run the application at startup. (`true`/`false`)
 - **toggle_key:** The hotkey to toggle the application.
 - **toggle_direction:** (`up`/`down`/`left`/`right`/`random`).
-- **default_pos:** Disable custom window positions (`true`/`false`)
+- **is_default_pos:** Disable custom window positions (`true`/`false`)
 
 ## Adding Custom Windows
 

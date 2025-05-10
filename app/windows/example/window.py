@@ -1,7 +1,11 @@
+import os
+
 from PySide6.QtWidgets import QLabel
 
-from res.paths import RES_PATH
-from windows.lib.custom_widgets import CustomWindow
+from windows.custom_widgets import CustomWindow
+
+RES_PATH = os.path.join(os.path.dirname(__file__), 'res/')
+IMG_PATH = os.path.join(os.path.dirname(__file__), 'res/img/')
 
 
 class MainWindow(CustomWindow):

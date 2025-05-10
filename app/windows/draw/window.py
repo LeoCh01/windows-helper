@@ -5,7 +5,7 @@ from PySide6.QtGui import QColor, QMouseEvent, QPainter, Qt, QPixmap, QPen, QSho
 from PySide6.QtWidgets import QPushButton, QHBoxLayout, QWidget, QApplication
 from PySide6.QtCore import QPoint, QRectF, Signal
 
-from windows.lib.custom_widgets import CustomWindow, ConfigWindow
+from windows.custom_widgets import CustomWindow, ConfigWindow
 
 
 class MainWindow(CustomWindow):

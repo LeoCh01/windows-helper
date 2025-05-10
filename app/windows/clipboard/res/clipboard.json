@@ -2,7 +2,7 @@
   "lock": false,
   "length": 2,
   "clipboard": [
-    "insertWidget",
-    "setFixedHeight"
+    "CustomWindow",
+    "commands_groupbox"
   ]
 }

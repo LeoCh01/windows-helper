@@ -1,6 +1,7 @@
 import base64
 import datetime
 import json
+import os
 
 from PySide6.QtCore import QTimer, Qt, QRect, QUrl, QByteArray
 from PySide6.QtGui import QGuiApplication
@@ -8,11 +9,12 @@ from PySide6.QtNetwork import QNetworkAccessManager, QNetworkRequest, QNetworkRe
 from PySide6.QtWidgets import QPushButton, QComboBox, QLineEdit, QHBoxLayout, QVBoxLayout, QApplication, \
     QScrollArea, QTextEdit, QCheckBox
 
-from res.paths import IMG_PATH, CHAT_PATH
-from windows.lib.custom_widgets import CustomWindow, ConfigWindow
+from windows.custom_widgets import CustomWindow
 
 import ollama
 
+CHAT_PATH = os.path.join(os.path.dirname(__file__), 'res/')
+IMG_PATH = os.path.join(os.path.dirname(__file__), 'res/img/')
 HISTORY = []
 
 

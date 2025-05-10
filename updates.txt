@@ -1,6 +1,7 @@
 CURRENT
-- fix clipboard window size change
 - add dynamic json settings
+- restructure plugins
+- fix clipboard window size change
 
 TODO
 - fix window loading
