@@ -1,0 +1,260 @@
+2025-05-09 17:39:32,162 - root - ERROR - 'PySide6.QtWidgets.QWidget.setGeometry' called with wrong argument types:
+  PySide6.QtWidgets.QWidget.setGeometry(int, int, int)
+Supported signatures:
+  PySide6.QtWidgets.QWidget.setGeometry(PySide6.QtCore.QRect, /)
+  PySide6.QtWidgets.QWidget.setGeometry(int, int, int, int, /)
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\draw.py", line 17, in __init__
+    self.cw = ConfigWindow(self)
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 208, in __init__
+    self.setGeometry(100, 100, 100)
+TypeError: 'PySide6.QtWidgets.QWidget.setGeometry' called with wrong argument types:
+  PySide6.QtWidgets.QWidget.setGeometry(int, int, int)
+Supported signatures:
+  PySide6.QtWidgets.QWidget.setGeometry(PySide6.QtCore.QRect, /)
+  PySide6.QtWidgets.QWidget.setGeometry(int, int, int, int, /)
+2025-05-09 17:41:27,574 - root - ERROR - ConfigWindow.__init__() missing 1 required positional argument: 'config_path'
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\draw.py", line 17, in __init__
+    self.cw = ConfigWindow(self)
+              ^^^^^^^^^^^^^^^^^^
+TypeError: ConfigWindow.__init__() missing 1 required positional argument: 'config_path'
+2025-05-09 17:48:40,877 - root - ERROR - [Errno 2] No such file or directory: ''
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\draw.py", line 17, in __init__
+    self.cw = ConfigWindow(self)
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 216, in __init__
+    self.generate_settings(config_path)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 228, in generate_settings
+    with open(config_path, 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: ''
+2025-05-09 17:56:35,522 - root - ERROR - maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\info.py", line 16, in __init__
+    super().__init__('Info', wid, geometry)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 26, in __init__
+    self.title_bar = CustomTitleBar(title, self, add_close_btn)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 142, in __init__
+    self.title_bar = CustomTitleBar(title, self, add_close_btn)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 142, in __init__
+    self.title_bar = CustomTitleBar(title, self, add_close_btn)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 142, in __init__
+    self.title_bar = CustomTitleBar(title, self, add_close_btn)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 992 more times]
+RecursionError: maximum recursion depth exceeded
+2025-05-09 17:59:44,785 - root - ERROR - 'NoneType' object has no attribute 'close'
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\chat.py", line 67, in __init__
+    self.cw = ConfigWindow(self, CHAT_PATH + 'chat.json')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 214, in __init__
+    self.title_bar = CustomTitleBar('Config', add_close_btn=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 148, in __init__
+    self.close_btn.clicked.connect(self.parent.close)
+                                   ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'close'
+2025-05-09 18:02:16,370 - root - ERROR - 'ConfigWindow' object has no attribute 'reject'
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\chat.py", line 67, in __init__
+    self.cw = ConfigWindow(self, CHAT_PATH + 'chat.json')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 232, in __init__
+    self.cancel_button.clicked.connect(self.reject)
+                                       ^^^^^^^^^^^
+AttributeError: 'ConfigWindow' object has no attribute 'reject'. Did you mean: 'rect'?
+2025-05-09 18:03:58,401 - root - ERROR - 'ConfigWindow' object has no attribute 'reject'
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\chat.py", line 67, in __init__
+    self.cw = ConfigWindow(self, CHAT_PATH + 'chat.json')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 232, in __init__
+    self.cancel_button.clicked.connect(self.reject)
+                                       ^^^^^^^^^^^
+AttributeError: 'ConfigWindow' object has no attribute 'reject'. Did you mean: 'rect'?
+2025-05-09 20:53:56,243 - root - ERROR - 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QGroupBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\chat.py", line 67, in __init__
+    self.cw = ConfigWindow(CHAT_PATH + 'chat.json')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 212, in __init__
+    self.generate_settings(config_path)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 252, in generate_settings
+    self.config_layout.addLayout(item)
+TypeError: 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QGroupBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)
+2025-05-09 20:54:31,348 - root - ERROR - 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QGroupBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\chat.py", line 67, in __init__
+    self.cw = ConfigWindow(CHAT_PATH + 'chat.json')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 212, in __init__
+    self.generate_settings(config_path)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 252, in generate_settings
+    self.config_layout.addLayout(item)
+TypeError: 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QGroupBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)
+2025-05-09 20:56:42,979 - root - ERROR - 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QCheckBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\chat.py", line 67, in __init__
+    self.cw = ConfigWindow(CHAT_PATH + 'chat.json')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 212, in __init__
+    self.generate_settings(config_path)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 254, in generate_settings
+    item = create_item(k, v)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 243, in create_item
+    group_layout.addLayout(item2)
+TypeError: 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QCheckBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)
+2025-05-09 20:58:16,946 - root - ERROR - 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QGroupBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\chat.py", line 67, in __init__
+    self.cw = ConfigWindow(CHAT_PATH + 'chat.json')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 212, in __init__
+    self.generate_settings(config_path)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 252, in generate_settings
+    self.config_layout.addLayout(item)
+TypeError: 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QGroupBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)
+2025-05-09 21:55:25,287 - root - ERROR - 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QGroupBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)
+Traceback (most recent call last):
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 130, in <module>
+    application = App()
+                  ^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 31, in __init__
+    self.load_windows(settings)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\main.py", line 49, in load_windows
+    self.windows.append(class_obj(i))
+                        ^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\chat.py", line 67, in __init__
+    self.cw = ConfigWindow(CHAT_PATH + 'chat.json')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 212, in __init__
+    self.generate_settings(config_path)
+  File "C:\Users\leoch\Documents\- Python Code\windows-helper\app\windows\lib\custom_widgets.py", line 258, in generate_settings
+    self.config_layout.addLayout(item)
+TypeError: 'PySide6.QtWidgets.QBoxLayout.addLayout' called with wrong argument types:
+  PySide6.QtWidgets.QBoxLayout.addLayout(QGroupBox)
+Supported signatures:
+  PySide6.QtWidgets.QBoxLayout.addLayout(PySide6.QtWidgets.QLayout, /, Optional[int] = None)

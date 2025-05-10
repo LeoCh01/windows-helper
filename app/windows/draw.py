@@ -5,7 +5,7 @@ from PySide6.QtGui import QColor, QMouseEvent, QPainter, Qt, QPixmap, QPen, QSho
 from PySide6.QtWidgets import QPushButton, QHBoxLayout, QWidget, QApplication
 from PySide6.QtCore import QPoint, QRectF, Signal
 
-from windows.lib.custom_widgets import CustomWindow
+from windows.lib.custom_widgets import CustomWindow, ConfigWindow
 
 
 class MainWindow(CustomWindow):
@@ -30,7 +30,6 @@ class MainWindow(CustomWindow):
         self.drawing_widget.close_sc.activated.connect(self.on_start_clicked)
 
         self.layout.addLayout(self.button_layout)
-        
 
     def on_start_clicked(self):
         if self.start_button.text() == "Start":
@@ -46,7 +45,7 @@ class DrawingWidget(QWidget):
         super().__init__()
         self.toggle_windows_2 = toggle_windows_2
         self.setAttribute(Qt.WidgetAttribute.WA_StaticContents)
-        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
         screen_geometry = QApplication.primaryScreen().geometry()
         self.setFixedSize(screen_geometry.width(), screen_geometry.height() - 20)
 
@@ -68,15 +67,15 @@ class DrawingWidget(QWidget):
         self.setCursor(QCursor(Qt.CursorShape.CrossCursor))
 
     def mousePressEvent(self, event: QMouseEvent):
-        if event.button() == Qt.LeftButton:
+        if event.button() == Qt.MouseButton.LeftButton:
             self.save_undo_state()
             self.drawing = True
             self.last_point = event.position().toPoint()
 
     def mouseMoveEvent(self, event: QMouseEvent):
-        if (event.buttons() & Qt.LeftButton) and self.drawing:
+        if (event.buttons() & Qt.MouseButton.LeftButton) and self.drawing:
             painter = QPainter(self.image)
-            pen = QPen(self.pen_color, self.pen_width, Qt.SolidLine)
+            pen = QPen(self.pen_color, self.pen_width, Qt.PenStyle.SolidLine)
             painter.setPen(pen)
             current_point = event.position().toPoint()
             painter.drawLine(self.last_point, current_point)
@@ -84,7 +83,7 @@ class DrawingWidget(QWidget):
             self.update()
 
     def mouseReleaseEvent(self, event: QMouseEvent):
-        if event.button() == Qt.LeftButton:
+        if event.button() == Qt.MouseButton.LeftButton:
             self.drawing = False
 
     def paintEvent(self, event):
@@ -174,7 +173,7 @@ class ColorWheel(QWidget):
                 painter.drawPoint(square_top_left + QPoint(x, y))
 
         painter.setPen(QPen(Qt.white, 2))
-        painter.setBrush(Qt.NoBrush)
+        painter.setBrush(Qt.BrushStyle.NoBrush)
 
         # Hue
         angle_rad = math.radians(self.hue)

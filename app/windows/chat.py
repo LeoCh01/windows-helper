@@ -9,7 +9,7 @@ from PySide6.QtWidgets import QPushButton, QComboBox, QLineEdit, QHBoxLayout, QV
     QScrollArea, QTextEdit, QCheckBox
 
 from res.paths import IMG_PATH, CHAT_PATH
-from windows.lib.custom_widgets import CustomWindow
+from windows.lib.custom_widgets import CustomWindow, ConfigWindow
 
 import ollama
 
@@ -18,7 +18,7 @@ HISTORY = []
 
 class MainWindow(CustomWindow):
     def __init__(self, wid, geometry=(730, 10, 190, 1)):
-        super().__init__('Chat', wid, geometry)
+        super().__init__('Chat', wid, geometry, config_path=CHAT_PATH + 'chat.json')
         self.ollama_client = None
 
         self.network_manager = QNetworkAccessManager(self)
